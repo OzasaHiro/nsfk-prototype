@@ -1,0 +1,44 @@
+# NSFK? プロトタイプ .gitignore
+
+# Environment variables
+.env
+
+# Virtual environment
+nsfk_env/
+venv/
+env/
+
+# Temporary files
+videos/
+images/
+*.mp4
+*.wav
+*.jpg
+*.png
+
+# Results (optional - comment out if you want to keep results in git)
+results/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
