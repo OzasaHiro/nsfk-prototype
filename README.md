@@ -16,18 +16,29 @@ This prototype provides the following features:
 
 ```
 nsfk-prototype/
-├── main.py              # Main execution file
-├── config.py           # Configuration settings
-├── youtube_downloader.py # YouTube video download functionality
-├── video_analyzer.py    # Video analysis (visual + audio)
-├── safety_scorer.py     # Safety scoring and evaluation
-├── requirements.txt     # Python dependencies
-├── README.md           # This file
-├── .env.example        # Environment variables template
-├── .gitignore          # Git ignore patterns
-├── videos/             # Downloaded videos (temporary)
-├── images/             # Extracted frames (temporary)
-└── results/            # Analysis results
+├── README.md                          # This file
+├── CLAUDE.md                          # Claude Code instructions
+├── Plan.md                            # Project planning documents
+├── Prototype_Implementation_Plan.md   # Implementation planning
+├── Reference.md                       # Reference documentation
+├── .env.example                       # Environment variables template
+├── .gitignore                         # Git ignore patterns
+└── Prototype/                         # Main application code
+    ├── main.py                        # Main execution file
+    ├── config.py                      # Configuration settings
+    ├── youtube_downloader.py          # YouTube video download functionality
+    ├── video_analyzer.py              # Video analysis (visual + audio)
+    ├── safety_scorer.py               # Safety scoring and evaluation
+    ├── quick_analyze.py               # Quick analysis tool
+    ├── demo_test.py                   # Demo and testing script
+    ├── test_config.py                 # Configuration test script
+    ├── requirements.txt               # Python dependencies
+    ├── setup_env.sh                   # Environment setup script
+    ├── .env.example                   # Environment variables template
+    ├── .gitignore                     # Git ignore patterns
+    ├── videos/                        # Downloaded videos (temporary)
+    ├── images/                        # Extracted frames (temporary)
+    └── results/                       # Analysis results
 ```
 
 ## 🚀 Setup
@@ -36,7 +47,7 @@ nsfk-prototype/
 
 ```bash
 git clone https://github.com/OzasaHiro/nsfk-prototype.git
-cd nsfk-prototype
+cd nsfk-prototype/Prototype
 pip install -r requirements.txt
 ```
 
@@ -65,7 +76,10 @@ export OPENAI_API_KEY="sk-your-api-key-here"
 
 ### Basic Usage
 
+Navigate to the Prototype directory first:
+
 ```bash
+cd Prototype
 python main.py
 ```
 
@@ -76,6 +90,9 @@ After execution, enter a YouTube URL or video ID when prompted.
 The following formats are supported:
 
 ```bash
+# Navigate to Prototype directory first
+cd Prototype
+
 # 1. Full URL
 python main.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
@@ -95,7 +112,7 @@ python quick_analyze.py "dQw4w9WgXcQ"
 
 ### Configuration Customization
 
-Adjust settings in `config.py`:
+Adjust settings in `Prototype/config.py`:
 
 ```python
 # Analysis precision vs speed/cost trade-off
@@ -139,8 +156,8 @@ SCORE_THRESHOLDS = {
 
 ### File Output
 
-- `results/nsfk_analysis_[VIDEO_ID]_[TIMESTAMP].json` - Detailed analysis data (JSON format)
-- `results/nsfk_analysis_[VIDEO_ID]_[TIMESTAMP].txt` - Human-readable format
+- `Prototype/results/nsfk_analysis_[VIDEO_ID]_[TIMESTAMP].json` - Detailed analysis data (JSON format)
+- `Prototype/results/nsfk_analysis_[VIDEO_ID]_[TIMESTAMP].txt` - Human-readable format
 
 ## ⚙️ Performance Specifications
 
@@ -182,19 +199,20 @@ SCORE_THRESHOLDS = {
 
 2. **Video Download Failure**
    ```bash
-   # Verify URL or try with video ID only
+   # Navigate to Prototype directory and verify URL or try with video ID only
+   cd Prototype
    python main.py "dQw4w9WgXcQ"
    ```
 
 3. **Whisper Model Loading Failure**
    ```bash
    # Check internet connection, try smaller model size
-   WHISPER_MODEL = "base"  # Set in config.py
+   WHISPER_MODEL = "base"  # Set in Prototype/config.py
    ```
 
 4. **Memory Issues**
    ```bash
-   # Reduce settings in config.py
+   # Reduce settings in Prototype/config.py
    MAX_SCENES = 10
    WHISPER_MODEL = "base"
    ```
@@ -204,7 +222,7 @@ SCORE_THRESHOLDS = {
 Enable debug mode for detailed error information:
 
 ```python
-# config.py
+# Prototype/config.py
 DEBUG = True
 VERBOSE = True
 ```
@@ -237,9 +255,9 @@ VERBOSE = True
 
 If you encounter issues or have questions, please check:
 
-1. `config.py` settings are correct
+1. `Prototype/config.py` settings are correct
 2. OpenAI API key is valid
-3. Dependencies are properly installed
+3. Dependencies are properly installed in the Prototype directory
 4. Internet connection is stable
 
 ## 🤝 Contributing
