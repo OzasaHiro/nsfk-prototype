@@ -1,0 +1,21 @@
+# NSFK? プロトタイプ 必要パッケージ
+
+# 基本パッケージ
+yt-dlp>=2024.6.0
+scenedetect>=0.6.4
+opencv-python>=4.10.0
+openai>=1.51.0
+requests>=2.32.0
+numpy>=2.0.0
+python-dotenv>=1.0.0
+
+# OpenAI Whisper
+openai-whisper @ git+https://github.com/openai/whisper.git
+
+# PyTorch (Whisper用)
+torch>=2.0.0
+
+# 追加の依存関係
+click>=8.0.0
+tqdm>=4.65.0
+platformdirs>=4.0.0
